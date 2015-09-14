@@ -1,3 +1,10 @@
 <h1>Gracias</h1>
 
-<%= link_to "Home", root_path%>
+<%= link_to "Volver a dejar otro mensaje :)", root_path%>
+
+<% @comentarios.each do |comentario| %>
+      <ul>
+      	<li><%= comentario.correo %></li>
+        <li><%= comentario.cuerpo %></li>
+      </ul>
+        <%end%>

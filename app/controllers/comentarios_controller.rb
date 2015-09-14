@@ -23,7 +23,7 @@ class ComentariosController < ApplicationController
   end
 
 def gracias
-  
+      @comentarios = Comentario.all
 end
   
   private
