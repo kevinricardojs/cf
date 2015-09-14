@@ -1,4 +1,5 @@
-<%= form_for(@comentario) do |f| %>
+<div class="formulario">
+  <%= form_for(@comentario) do |f| %>
   <% if @comentario.errors.any? %>
     <div id="error_explanation">
       <h3><%= pluralize(@comentario.errors.count, "error") %> impide que este mesaje sea guardado</h3>
@@ -12,14 +13,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :correo, "Email" %><br>
-    <%= f.text_field :correo %>
+    <%= f.label :correo, "Tu Email" ,class:"label" %><br>
+    <%= f.text_field :correo ,class:"text"%>
   </div>
   <div class="field">
-    <%= f.label :mensaje, "Mensaje" %><br>
-    <%= f.text_area :mensaje %>
+    <%= f.label :mensaje, "Mensaje",class:"label" %><br>
+    <%= f.text_area :mensaje,class:"text" %>
   </div>
   <div class="actions">
-    <%= f.submit "Enviar" %>
+    <%= f.submit "Enviar",class:"boton" %>
   </div>
 <% end %>
+
+</div>

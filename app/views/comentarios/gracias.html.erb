@@ -1,10 +1,19 @@
-<h1>Gracias</h1>
+<div class="caja-todo">
+<h1>Gracias :)</h1>
+<img class="logo-cf" src="images/crocode.png" alt="crocode">
 
-<%= link_to "Volver a dejar otro mensaje :)", root_path%>
 
-<% @comentarios.each do |comentario| %>
-      <ul>
-      	<li><%= comentario.correo %></li>
-        <li><%= comentario.mensaje%></li>
-      </ul>
-        <%end%>
+<%= link_to "<- Volver a dejar otro mensaje :)", root_path ,class:"gracias" %>
+	<div class="mensajes">
+		<% @comentarios.each do |comentario| %>
+
+		<ul>
+			<li class="correo">- <%= comentario.correo %></li>
+			<li class="mensaje">- <%= comentario.mensaje %></li>
+		</ul>
+
+		<%end%>
+	</div>
+
+</div>
+</div>

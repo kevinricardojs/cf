@@ -1,12 +1,29 @@
-<h2>Nuevo Mensaje</h2>
+<div class="caja-todo">
+	<h2>Dale las gracias a:</h2>
+	<img class="logo-cf"src="images/codigofacilito.jpg" alt="">
 
-<%= render 'form' %>
+	<h3>Por todo los que nos han dado</h3>
+	<div class="caja-cursos">
+		<img src="images/html5.png" alt="html5" class="curso">
+		<img src="images/css3.png" alt="css3" class="curso">
+		<img src="images/android.png" alt="android" class="curso">
+		<img src="images/jquery.png" alt="jquery" class="curso">
+		<img src="images/python.png" alt="python" class="curso">
+		<img src="images/rails.png" alt="rails" class="curso">
+		<h4>Y nos seguira dando...</h4>
+	</div>
 
-<%= link_to 'Back', comentarios_path %>
+	<%= render 'form' %>
 
-<% @comentarios.each do |comentario| %>
-      <ul>
-      	<li><%= comentario.correo %></li>
-        <li><%= comentario.mensaje %></li>
-      </ul>
-        <%end%>
+	<div class="mensajes">
+		<% @comentarios.each do |comentario| %>
+
+		<ul>
+			<li class="correo">- <%= comentario.correo %></li>
+			<li class="mensaje">- <%= comentario.mensaje %></li>
+		</ul>
+
+		<%end%>
+	</div>
+
+</div>
