@@ -34,6 +34,6 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comentario_params
-      params.require(:comentario).permit(:correo, :cuerpo)
+      params.require(:comentario).permit(:correo, :mensaje)
     end
 end

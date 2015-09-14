@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20150914024029) do
 
   create_table "comentarios", force: :cascade do |t|
     t.string   "correo"
-    t.text     "cuerpo"
+    t.text     "mensaje"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
