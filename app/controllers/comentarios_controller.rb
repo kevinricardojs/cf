@@ -1,9 +1,6 @@
 class ComentariosController < ApplicationController
   before_action :set_comentario, only: [:show, :edit, :update, :destroy]
 
-
-
-
   def nuevo
     @comentario = Comentario.new
     @comentarios = Comentario.all
@@ -11,18 +8,23 @@ class ComentariosController < ApplicationController
 
   def create
     @comentario = Comentario.new(comentario_params)
+    @comentarios = Comentario.all
 
     respond_to do |format|
       if @comentario.save
-        format.html { redirect_to root_path , notice: 'Comentario was successfully created.' }
+
+        format.html { render :gracias}
         format.json { render :show, status: :created, location: @comentario }
       else
-        format.html { render :new }
+        format.html { render :nuevo }
         format.json { render json: @comentario.errors, status: :unprocessable_entity }
       end
     end
   end
 
+def gracias
+  
+end
   
   private
     # Use callbacks to share common setup or constraints between actions.

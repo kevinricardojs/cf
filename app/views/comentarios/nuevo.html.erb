@@ -1,0 +1,12 @@
+<h2>Nuevo Mensaje</h2>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', comentarios_path %>
+
+<% @comentarios.each do |comentario| %>
+      <ul>
+      	<li><%= comentario.correo %></li>
+        <li><%= comentario.cuerpo %></li>
+      </ul>
+        <%end%>
