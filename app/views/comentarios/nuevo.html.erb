@@ -11,16 +11,23 @@
 		<img src="images/python.png" alt="python" class="curso">
 		<img src="images/rails.png" alt="rails" class="curso">
 		<h4>Y nos seguira dando...</h4>
+		<h4>Si quieres revisar el codigo de esta pagina  </i><a href="https://github.com/kevinricardojs/cf"><i class="fa fa-github fa-3x"></i></a></h4>
 	</div>
 
 	<%= render 'form' %>
 
 	<div class="mensajes">
 		<% @comentarios.each do |comentario| %>
-
+			<% @fecha = comentario.created_at.to_s.split.to_a %>
+			<% @dia = @fecha[0].to_s.split(/-/).to_a.reverse %>
+			<% @hora = @fecha[1].to_s.split(/:/).to_a %>
+			
+			
 		<ul>
-			<li class="correo">- <%= comentario.correo %></li>
-			<li class="mensaje">- <%= comentario.mensaje %></li>
+			<li class="correo"><i class="fa fa-user"></i> <%= comentario.correo %></li>
+			<li class="mensaje"><i class="fa fa-comment"></i> <%= comentario.mensaje %></li>
+			<li class="fecha mensaje"> <%= "Fue añadido a las #{@hora[0]}:#{@hora[1]} del #{@dia[0]}-#{@dia[1]}-#{@dia[2]} " %></li>
+			
 		</ul>
 
 		<%end%>

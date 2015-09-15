@@ -1,15 +1,21 @@
 <div class="caja-todo">
-<h1>Gracias :)</h1>
-<img class="logo-cf" src="images/crocode.png" alt="crocode">
+<h1>Gracias :) y lee lo que dice el Coco</h1>
+<img class="croco" src="images/crocode.png" alt="crocode">
 
-
+	
 <%= link_to "<- Volver a dejar otro mensaje :)", root_path ,class:"gracias" %>
 	<div class="mensajes">
 		<% @comentarios.each do |comentario| %>
-
+			<% @fecha = comentario.created_at.to_s.split.to_a %>
+			<% @dia = @fecha[0].to_s.split(/-/).to_a.reverse %>
+			<% @hora = @fecha[1].to_s.split(/:/).to_a %>
+			
+			
 		<ul>
-			<li class="correo">- <%= comentario.correo %></li>
-			<li class="mensaje">- <%= comentario.mensaje %></li>
+			<li class="correo"><i class="fa fa-user"></i> <%= comentario.correo %></li>
+			<li class="mensaje"><i class="fa fa-comment"></i> <%= comentario.mensaje %></li>
+			<li class="fecha mensaje"> <%= "Fue añadido a las #{@hora[0]}:#{@hora[1]} del #{@dia[0]}-#{@dia[1]}-#{@dia[2]} " %></li>
+			
 		</ul>
 
 		<%end%>
